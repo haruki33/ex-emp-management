@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.domain.Administrator;
 import com.example.form.InsertAdministratorForm;
+import com.example.form.LoginForm;
 import com.example.service.AdministratorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,17 @@ public class AdministratorController {
 
     @Autowired
     private AdministratorService service;
+
+    /**
+     * login.htmlにフォワードする.
+     *
+     * @param form ログイン時に使用するフォーム
+     * @return administrator/login.htmlにフォワード
+     */
+    @GetMapping("/")
+    public String toLogin(LoginForm form) {
+        return "administrator/login";
+    }
 
     /**
      * insert.htmlにフォワードする.
