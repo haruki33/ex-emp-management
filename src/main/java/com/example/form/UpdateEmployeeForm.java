@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 
 /**
- * 従業員の扶養人数変更時に使用するフォーム
+ * 従業員の扶養人数変更時に使用するフォーム.
  */
 public class UpdateEmployeeForm {
     /**
