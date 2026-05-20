@@ -82,4 +82,15 @@ public class AdministratorController {
         return "redirect:/employee/show-list";
 
     }
+
+    /**
+     * ログアウトする.
+     *
+     * @return ログイン画面にリダイレクト
+     */
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return "redirect:/";
+    }
 }
