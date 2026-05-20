@@ -1,0 +1,30 @@
+package com.example.controller;
+
+import com.example.form.InsertAdministratorForm;
+import com.example.service.AdministratorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 管理者関連機能の処理の制御を行うコントローラー.
+ */
+@Controller
+@RequestMapping("/")
+public class AdministratorController {
+
+    @Autowired
+    private AdministratorService service;
+
+    /**
+     * insert.htmlにフォワードする.
+     *
+     * @param form 管理者情報登録時に使用するフォーム
+     * @return administrator/insert.htmlにフォワード
+     */
+    @GetMapping("/to-insert")
+    public String toInsert(InsertAdministratorForm form) {
+        return "administrator/insert";
+    }
+}
