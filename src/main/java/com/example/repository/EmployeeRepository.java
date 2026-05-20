@@ -111,8 +111,8 @@ public class EmployeeRepository {
                     name =:name
                 ,   image = :image
                 ,   gender = :gender
-                ,   hire_date = :hireDare
-                ,   mail_address = :mail_address
+                ,   hire_date = :hireDate
+                ,   mail_address = :mailAddress
                 ,   zip_code = :zipCode
                 ,   address = :address
                 ,   telephone = :telephone
