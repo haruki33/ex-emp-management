@@ -24,4 +24,15 @@ public class AdministratorService {
     public void insert(Administrator administrator) {
         repository.insert(administrator);
     }
+
+    /**
+     * ログイン処理をする.
+     *
+     * @param mailAddress メールアドレス
+     * @param password    パスワード
+     * @return メールアドレスとパスワードで検索した結果、一致した従業員情報　1件も存在しない場合はnullを返す
+     */
+    public Administrator login(String mailAddress, String password) {
+        return repository.findByMailAddressAndPassword(mailAddress, password);
+    }
 }
