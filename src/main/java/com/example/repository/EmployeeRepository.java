@@ -45,21 +45,21 @@ public class EmployeeRepository {
         String sql = """
                 SELECT
                     id
-                    , name
-                    , image
-                    , gender
-                    , hireDate
-                    , mailAddress
-                    , zipCode
-                    , address
-                    , telephone
-                    , salary
-                    , characteristics
-                    , dependentsCount
+                ,   name
+                ,   image
+                ,   gender
+                ,   hire_date
+                ,   mail_address
+                ,   zip_code
+                ,   address
+                ,   telephone
+                ,   salary
+                ,   characteristics
+                ,   dependents_count
                 FROM
                     employees
                 ORDER BY
-                    hireDate DESC
+                    hire_date DESC
                 """;
         return template.query(sql, EMPLOYEE_ROW_MAPPER);
     }
