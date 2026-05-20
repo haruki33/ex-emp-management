@@ -28,7 +28,7 @@ public class AdministratorController {
     /**
      * ログイン画面を表示する.
      *
-     * @param form ログイン時に使用するフォーム
+     * @param form フォーム
      * @return ログイン画面
      */
     @GetMapping("/")
@@ -39,8 +39,8 @@ public class AdministratorController {
     /**
      * インサート画面にフォワードする.
      *
-     * @param form 管理者情報登録時に使用するフォーム
-     * @return インサート画面にフォワード
+     * @param form フォーム
+     * @return インサート画面
      */
     @GetMapping("/to-insert")
     public String toInsert(InsertAdministratorForm form) {
@@ -50,8 +50,8 @@ public class AdministratorController {
     /**
      * 管理者登録を行う.
      *
-     * @param form 管理者登録に使うフォーム
-     * @return ログイン画面にリダイレクト
+     * @param form フォーム
+     * @return ログイン画面
      */
     @PostMapping("/insert")
     public String insert(InsertAdministratorForm form) {
@@ -65,8 +65,8 @@ public class AdministratorController {
     /**
      * メールアドレスとパスワードでログインする.
      *
-     * @param form  管理者登録で使用するフォーム
-     * @param model エラーメッセージを格納するためのモデル
+     * @param form  フォーム
+     * @param model モデル
      * @return ログイン成功時は従業員一覧へ、失敗時はログイン画面へ遷移
      */
     @PostMapping("/login")
@@ -86,7 +86,7 @@ public class AdministratorController {
     /**
      * ログアウトする.
      *
-     * @return ログイン画面にリダイレクト
+     * @return ログイン画面
      */
     @GetMapping("/logout")
     public String logout() {

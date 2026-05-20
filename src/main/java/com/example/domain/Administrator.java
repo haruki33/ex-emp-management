@@ -2,16 +2,15 @@ package com.example.domain;
 
 import lombok.*;
 
+/**
+ * 管理者情報を表すドメイン.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
-
-/**
- * 管理者情報を表すドメイン.
- */
 public class Administrator {
     /**
      * ID

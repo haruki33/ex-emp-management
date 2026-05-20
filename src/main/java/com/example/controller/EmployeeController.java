@@ -25,8 +25,8 @@ public class EmployeeController {
     /**
      * 従業員情報全件表示する.
      *
-     * @param model 従業員情報全件を書くのするためのモデル
-     * @return 従業員情報一覧画面へフォワード
+     * @param model モデル
+     * @return 従業員情報一覧画面
      */
     @GetMapping("/show-list")
     public String showList(Model model) {
@@ -39,9 +39,9 @@ public class EmployeeController {
      * 従業員詳細画面を表示.
      *
      * @param id    ID
-     * @param model 従業員全件を格納するためのモデル
-     * @param form  扶養人数変更時に使用するためのフォーム
-     * @return 詳細画面にフォワード
+     * @param model モデル
+     * @param form  フォーム
+     * @return 詳細画面
      */
     @GetMapping("/show-detail")
     public String showDetail(String id, Model model, UpdateEmployeeForm form) {
@@ -53,8 +53,8 @@ public class EmployeeController {
     /**
      * 扶養人数を変更する.
      *
-     * @param form 扶養人数変更時に使用するフォーム
-     * @return 従業員一覧にリダイレクト
+     * @param form フォーム
+     * @return 従業員一覧
      */
     @PostMapping("/update")
     public String update(UpdateEmployeeForm form) {

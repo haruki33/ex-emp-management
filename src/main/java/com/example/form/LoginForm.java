@@ -2,16 +2,15 @@ package com.example.form;
 
 import lombok.*;
 
+/**
+ * ログイン時に使用するフォーム.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
-
-/**
- * ログイン時に使用するフォーム.
- */
 public class LoginForm {
     /**
      * メールアドレス
