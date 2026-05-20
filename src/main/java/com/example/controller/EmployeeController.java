@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.domain.Employee;
+import com.example.form.UpdateEmployeeForm;
 import com.example.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,5 +32,12 @@ public class EmployeeController {
         List<Employee> employeeList = service.showList();
         model.addAttribute("employeeList", employeeList);
         return "employee/list";
+    }
+
+    @GetMapping("/show-detail")
+    public String showDetail(String id, Model model, UpdateEmployeeForm form) {
+        Employee employee = service.showDetail(Integer.parseInt(id));
+        model.addAttribute("employee", employee);
+        return "/employee/detail";
     }
 }
