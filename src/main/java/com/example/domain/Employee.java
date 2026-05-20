@@ -12,7 +12,7 @@ import java.util.Date;
 @Builder
 
 /**
- * 従業員情報を表すドメイン
+ * 従業員情報を表すドメイン.
  */
 
 public class Employee {

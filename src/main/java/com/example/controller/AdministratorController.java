@@ -26,10 +26,10 @@ public class AdministratorController {
     private HttpSession session;
 
     /**
-     * login.htmlにフォワードする.
+     * ログイン画面を表示する.
      *
      * @param form ログイン時に使用するフォーム
-     * @return administrator/login.htmlにフォワード
+     * @return ログイン画面
      */
     @GetMapping("/")
     public String toLogin(LoginForm form) {
@@ -37,10 +37,10 @@ public class AdministratorController {
     }
 
     /**
-     * insert.htmlにフォワードする.
+     * インサート画面にフォワードする.
      *
      * @param form 管理者情報登録時に使用するフォーム
-     * @return administrator/insert.htmlにフォワード
+     * @return インサート画面にフォワード
      */
     @GetMapping("/to-insert")
     public String toInsert(InsertAdministratorForm form) {
@@ -48,7 +48,7 @@ public class AdministratorController {
     }
 
     /**
-     * 管理者登録（insert）を行う.
+     * 管理者登録を行う.
      *
      * @param form 管理者登録に使うフォーム
      * @return ログイン画面にリダイレクト
