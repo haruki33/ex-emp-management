@@ -6,11 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+// LoginCheckInterceptorと同様でインターフェースを実装するため
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Autowired
-    private LoginCheckInterceptor loginCheckInterceptor;
+    private LoginCheckInterceptor loginCheckInterceptor; // componentをつけたためDIコンテナにより自動注入
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
