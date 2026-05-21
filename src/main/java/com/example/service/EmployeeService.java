@@ -38,14 +38,14 @@ public class EmployeeService {
     }
 
     /**
-     * 扶養人数を変更する.
+     * 扶養家族数を更新する。
      *
-     * @param id       ID
-     * @param newCount 新しい扶養人数
+     * @param employee 従業員
      */
-    public void UpdateDependentsCount(Integer id, Integer newCount) {
-        Employee employee = repository.findById(id);
-        employee.setDependentsCount(newCount);
+    public void UpdateDependentsCount(Employee employee) {
+        final Employee foundEmployee = repository.findById(employee.getId());
+        employee.setImage(foundEmployee.getImage());
+
         repository.Update(employee);
     }
 }

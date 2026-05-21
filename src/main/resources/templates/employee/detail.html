@@ -97,69 +97,96 @@
                             <tr>
                                 <th nowrap>従業員名</th>
                                 <td>
-                                    <span th:text="*{name}">山田花子</span>
+                                    <input
+                                            type="text"
+                                            value="山田花子"
+                                            th:field="*{name}">
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>写真</th>
                                 <td>
-                                    <img src="../../static/img/e2.png" th:src="@{/img/} + *{image}"/>
+                                    <img src="../../static/img/e2.png" th:src="@{/img/} + *{image}"
+                                         th:value="*{image}" alt="個人写真"/>
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>性別</th>
                                 <td>
-                                    <span th:text="*{gender}">女性</span>
+                                    <input
+                                            type="text"
+                                            value="女性"
+                                            th:field="*{gender}"
+                                    >
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>入社日</th>
                                 <td>
-                                    <span th:text="*{hireDate}">2012/11/29</span>
+                                    <input
+                                            type="date"
+                                            value="2012/11/29"
+                                            th:field="*{hireDate}">
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>メールアドレス</th>
                                 <td>
-                                    <span th:text="*{mailAddress}">yamada@sample.com</span>
+                                    <input
+                                            type="email"
+                                            value="yamada@sample.com"
+                                            th:field="*{mailAddress}">
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>郵便番号</th>
                                 <td>
-                                    <span th:text="*{address}">111-1111</span>
+                                    <input
+                                            type="text"
+                                            value="111-1111"
+                                            th:field="*{zipCode}">
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>住所</th>
                                 <td>
-                                    <span th:text="*{zipCode}">東京都新宿区1-1-1</span>
+                                    <input
+                                            type="text"
+                                            value="東京都新宿区1-1-1"
+                                            th:field="*{address}">
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>電話番号</th>
                                 <td>
-                                    <span th:text="*{telephone}">090-0000-0000</span>
+                                    <input
+                                            type="tel"
+                                            value="090-0000-0000"
+                                            th:field="*{telephone}">
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>給料</th>
                                 <td>
-                                    <span th:text="*{salary}">400000円</span>
+                                    <input
+                                            type="number"
+                                            value="400000"
+                                            th:field="*{salary}"> 円
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>特性</th>
                                 <td>
-                      <span th:text="*{characteristics}"
-                      >明るく素直な性格です。リーダーシップを発揮します。新卒社員研修の時はグループ開発の時にリーダーを買ってでました。積極性も人間性も抜群です。周りに対する不満も聞いたことがありません。</span
-                      >
+                                    <textarea
+                                            rows="5"
+                                            cols="50"
+                                            th:field="*{characteristics}">明るく素直な性格です。リーダーシップを発揮します。新卒社員研修の時はグループ開発の時にリーダーを買ってでました。積極性も人間性も抜群です。周りに対する不満も聞いたことがありません。</textarea>
                                 </td>
                             </tr>
                             <tr>
                                 <th nowrap>扶養人数</th>
                                 <td>
-                                    <label class="error-messages">
+                                    <label class="error-messages" th:errors="*{dependentsCount}">
                                         扶養人数を入力してください
                                     </label>
                                     <label
@@ -167,7 +194,7 @@
                                             style="color: red"
                                             for="dependentsCount"
                                     ></label>
-                                    <input type="hidden" name="id" th:value="*{id}"/>
+                                    <input type="hidden" th:field="*{id}"/>
                                     <input
                                             type="text"
                                             name="dependentsCount"

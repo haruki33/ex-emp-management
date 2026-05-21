@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.domain.Employee;
 import com.example.form.UpdateEmployeeForm;
 import com.example.service.EmployeeService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,10 +59,10 @@ public class EmployeeController {
      */
     @PostMapping("/update")
     public String update(UpdateEmployeeForm form) {
-        service.UpdateDependentsCount(
-                Integer.parseInt(form.getId()),
-                Integer.parseInt(form.getDependentsCount())
-        );
+        final ModelMapper modelMapper = new ModelMapper();
+        final Employee employee = modelMapper.map(form, Employee.class);
+
+        service.UpdateDependentsCount(employee);
         return "redirect:/employee/show-list";
     }
 }

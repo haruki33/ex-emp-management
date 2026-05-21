@@ -25,11 +25,6 @@ public class UpdateEmployeeForm {
     private String name;
 
     /**
-     * 画像
-     */
-    private String image;
-
-    /**
      * 性別
      */
     private String gender;
