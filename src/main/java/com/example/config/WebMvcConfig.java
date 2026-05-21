@@ -15,7 +15,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginCheckInterceptor)
-                .addPathPatterns("/employee/**") // 「/employee/」で始まる全てのURLに適用
-                .excludePathPatterns("/", "/login", "/css/**", "/js/**", "/img/**"); // 除外するパス
+                .addPathPatterns("/employee/**"); // 「/employee/」で始まる全てのURLに適用
     }
 }
